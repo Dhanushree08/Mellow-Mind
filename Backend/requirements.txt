@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+groq
+motor
+dnspython
+python-dotenv
+faster-whisper
+python-multipart
