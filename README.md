@@ -66,10 +66,25 @@ graph TD
     H -. "Adjusts Voice Tone" .-> E1
 ```
 
-The application follows a decoupled client-server architecture:
-1. **Frontend (`/Frontend`):** Built with React.js. Provides a modern, responsive chat interface and community forum dashboard.
-2. **Backend (`/Backend`):** Built with FastAPI and Python. Houses the multi-agent LLM logic, evaluation scripts, and MongoDB asynchronous drivers.
-3. **Database:** MongoDB Atlas clusters handle `Chat_History`, `Community_Posts`, and the `Golden_Dataset` evaluation records.
+### How the Multi-Agent System Works (Data Flow)
+
+**1. The Input Phase (Layers 1 to 3)**
+It starts when a user types a message or speaks into the microphone on our React Frontend **(Layer 1)**. That data passes through our Secure API Gateway **(Layer 2)** to ensure privacy, and any spoken audio is instantly transcribed into text by our Intelligent Processing module **(Layer 3)**.
+
+**2. The "Brains" of the Operation (Layer 4 - Multi-Agent Core)**
+This is where our system becomes truly novel. Instead of relying on one generic AI, the user's text is routed to **four specialized AI Agents** running in parallel:
+*   **4.1 The Risk Assessment Agent:** Immediately scans the text to see if the user is in danger (like self-harm).
+*   **4.2 The Emotional State Agent:** Analyzes if the user is feeling Anxious, Depressed, or Stressed.
+*   **4.3 The Support Strategy Agent:** Decides the best clinical therapy technique to use.
+*   **4.4 The Resource Agent:** Finds helpful tools, like breathing exercises or calming music.
+
+**3. Blending it Together (Layer 5 - Orchestrator)**
+Once the 4 agents finish their jobs, they send their isolated insights down to the **Adaptive Response Orchestrator (Layer 5)**. The Orchestrator perfectly blends all of their advice together to generate one single, highly empathetic response.
+
+**4. Safety & Delivery (Layers 6 to 10)**
+Before the user ever sees the message, it is double-checked by our Ethical Compliance Layer **(Layer 6)** to guarantee clinical safety. If the user is using Voice Mode, our Generator **(Layer 7)** reads the message out loud using a soothing tone that matches their mood. Finally, the entire interaction is securely saved into our Contextual Memory Database **(Layer 8)** so the AI actually remembers the user's emotional history for their next session on the Dashboard **(Layer 9 & 10)**.
+
+---
 
 ---
 
