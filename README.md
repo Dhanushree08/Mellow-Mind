@@ -18,6 +18,73 @@ This repository contains both the **React Frontend** (User Interface) and the **
 - **Ultra-Low Latency:** Optimized via Groq hardware, achieving an average Time-To-First-Token (TTFT) of 17.4ms.
 
 ## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    %% Nodes
+    A["1. UI PATH LAYER (Web & Voice)<br/>User interacts via Web UI or Voice Input"]
+    B["2. SECURE API GATEWAY<br/>Authenticates requests, ensures security & privacy"]
+    C["3. INTELLIGENT PROCESSING (Text & Voice-to-Text)<br/>Processes input using NLP & Speech-to-Text"]
+    D["4. MULTI-AGENT CORE<br/>Routes task to specialized AI agents"]
+    
+    E1["4.1 CRISIS RISK ASSESSMENT AGENT<br/>• Risk evaluation<br/>• Critical detection<br/>• Safety assessment"]
+    E2["4.2 EMOTIONAL STATE INFERENCE AGENT<br/>• Emotion detection<br/>• Mood analysis<br/>• Sentiment analysis"]
+    E3["4.3 SUPPORT STRATEGY AGENT<br/>• Chooses suitable support<br/>• Personalized guidance<br/>• Intervention planning"]
+    E4["4.4 RESOURCE RECOMMENDATION AGENT<br/>• Music & activities<br/>• Helpful resources<br/>• Community & tools"]
+    
+    F["5. ADAPTIVE RESPONSE ORCHESTRATOR (ARO)<br/>Combines insights from all agents to create the best response"]
+    G["6. ETHICAL & SAFETY COMPLIANCE LAYER<br/>Applies safety filters, ethical checks & content guidelines"]
+    H["7. EMOTION-AWARE VOICE GENERATOR<br/>Adjusts pitch, tone & speed according to user's emotional state"]
+    I["8. CONTEXTUAL MEMORY INTELLIGENCE MODULE<br/>Stores & retrieves mood history, context & preferences securely"]
+    
+    J1["9. EMOTIONAL ANALYTICS & MONITORING DASHBOARD<br/>Tracks mood trends, risk alerts & user well-being insights"]
+    J2["10. ADAPTIVE RESPONSE INTERFACE (TEXT & VOICE)<br/>Delivers personalized responses via Text & Voice"]
+
+    %% Edges
+    A --> B
+    B --> C
+    C --> D
+    
+    D --> E1
+    D --> E2
+    D --> E3
+    D --> E4
+    
+    E1 -- "Safety Level" --> F
+    E2 -- "User's Mood" --> F
+    E3 -- "How to Respond" --> F
+    E4 -- "Suggested Links" --> F
+    
+    F --> G
+    G --> H
+    H --> I
+    
+    I --> J1
+    I --> J2
+    
+    %% Feedback Loop
+    H -. "Adjusts Voice Tone" .-> E1
+
+    %% Styling to match the image colors
+    style A fill:#e6f2ff,stroke:#3b82f6,stroke-width:2px
+    style B fill:#e6ffe6,stroke:#22c55e,stroke-width:2px
+    style C fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
+    style D fill:#f1f5f9,stroke:#64748b,stroke-width:2px
+    
+    style E1 fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+    style E2 fill:#fce7f3,stroke:#ec4899,stroke-width:2px
+    style E3 fill:#e0f2fe,stroke:#0ea5e9,stroke-width:2px
+    style E4 fill:#ffedd5,stroke:#f97316,stroke-width:2px
+    
+    style F fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+    style G fill:#dcfce7,stroke:#22c55e,stroke-width:2px
+    style H fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
+    style I fill:#f1f5f9,stroke:#64748b,stroke-width:2px
+    
+    style J1 fill:#ffe4e6,stroke:#f43f5e,stroke-width:2px
+    style J2 fill:#ecfdf5,stroke:#10b981,stroke-width:2px
+```
+
 The application follows a decoupled client-server architecture:
 1. **Frontend (`/Frontend`):** Built with React.js. Provides a modern, responsive chat interface and community forum dashboard.
 2. **Backend (`/Backend`):** Built with FastAPI and Python. Houses the multi-agent LLM logic, evaluation scripts, and MongoDB asynchronous drivers.
