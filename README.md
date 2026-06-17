@@ -64,25 +64,6 @@ graph TD
     
     %% Feedback Loop
     H -. "Adjusts Voice Tone" .-> E1
-
-    %% Styling to match the image colors
-    style A fill:#e6f2ff,stroke:#3b82f6,stroke-width:2px
-    style B fill:#e6ffe6,stroke:#22c55e,stroke-width:2px
-    style C fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
-    style D fill:#f1f5f9,stroke:#64748b,stroke-width:2px
-    
-    style E1 fill:#fee2e2,stroke:#ef4444,stroke-width:2px
-    style E2 fill:#fce7f3,stroke:#ec4899,stroke-width:2px
-    style E3 fill:#e0f2fe,stroke:#0ea5e9,stroke-width:2px
-    style E4 fill:#ffedd5,stroke:#f97316,stroke-width:2px
-    
-    style F fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
-    style G fill:#dcfce7,stroke:#22c55e,stroke-width:2px
-    style H fill:#f3e8ff,stroke:#a855f7,stroke-width:2px
-    style I fill:#f1f5f9,stroke:#64748b,stroke-width:2px
-    
-    style J1 fill:#ffe4e6,stroke:#f43f5e,stroke-width:2px
-    style J2 fill:#ecfdf5,stroke:#10b981,stroke-width:2px
 ```
 
 The application follows a decoupled client-server architecture:
